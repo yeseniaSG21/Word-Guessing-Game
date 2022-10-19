@@ -1,4 +1,7 @@
-
+const game = new Game();
+const randomPhrase = game.getRandomPhrase();
+const phrase = new Phrase(randomPhrase.phrase);
+phrase.addPhraseToDisplay();
 
 /**
 Create a new instance of the Game class and add event listeners for the start button and onscreen keyboard buttons:

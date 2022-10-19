@@ -1,25 +1,26 @@
 class Game {
-  constructor() {
-    this.missed = 0;
-    this.phrases = [
-        new Phrase('Dream big and dare to fail'),
-        new Phrase('Believe in yourself and you will be unstoppable'),
-        new Phrase('Make each day your masterpiece'),
-        new Phrase('It is never too late to be what you might have been'),
-        new Phrase('I am stress because I am blessed'),
-    ];
-    this.activePhrase = null;
-  }
+    constructor() {
+      this.missed = 0;
+      this.phrases = [
+          new Phrase('Dream big and dare to fail'),
+          new Phrase('Believe in yourself and you will be unstoppable'),
+          new Phrase('Make each day your masterpiece'),
+          new Phrase('It is never too late to be what you might have been'),
+          new Phrase('I am stress because I am blessed'),
+      ];
+      this.activePhrase = null;
+    }
 
-  /**
-    * Selects random phrase from phrases property
-    * @return {Object} Phrase object chosen to be used
-  **/
-  getRandomPhrase() {
-    const randomPhrase = Math.floor(Math.random() * this.phrases.length);
-    return this.phrases[randomPhrase];
+    /**
+      * Selects random phrase from phrases property
+      * @return {Object} Phrase object chosen to be used
+    **/
+    getRandomPhrase() {
+      const randomPhrase = Math.floor(Math.random() * this.phrases.length);
+      return this.phrases[randomPhrase];
+    };
 
-  };
+
 }
 
 
@@ -42,8 +43,6 @@ The class should also have these methods:
     startGame(): hides the start screen overlay, calls the getRandomPhrase() method,
     and sets the activePhrase property with the chosen phrase.
     It also adds that phrase to the board by calling the addPhraseToDisplay() method on the activePhrase property.
-
-    getRandomPhrase(): this method randomly retrieves one of the phrases stored in the phrases array and returns it.
 
     handleInteraction(): this method controls most of the game logic.
     It checks to see if the button clicked by the player matches a letter in the phrase, and then directs
