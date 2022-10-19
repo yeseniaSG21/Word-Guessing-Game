@@ -1,9 +1,25 @@
 class Game {
   constructor() {
     this.missed = 0;
-    this.phrases = [];
+    this.phrases = [
+        new Phrase('Dream big and dare to fail'),
+        new Phrase('Believe in yourself and you will be unstoppable'),
+        new Phrase('Make each day your masterpiece'),
+        new Phrase('It is never too late to be what you might have been'),
+        new Phrase('I am stress because I am blessed'),
+    ];
     this.activePhrase = null;
   }
+
+  /**
+    * Selects random phrase from phrases property
+    * @return {Object} Phrase object chosen to be used
+  **/
+  getRandomPhrase() {
+    const randomPhrase = Math.floor(Math.random() * this.phrases.length);
+    return this.phrases[randomPhrase];
+
+  };
 }
 
 
