@@ -6,7 +6,7 @@ class Phrase {
 
 
 
-
+/**
 The class should also have these methods:
 
 addPhraseToDisplay(): this adds letter placeholders to the display when the game starts.
@@ -23,3 +23,4 @@ checkLetter(): checks to see if the letter selected by the player matches a lett
 showMatchedLetter(): reveals the letter(s) on the board that matches the player's selection.
 To reveal the matching letter(s), select all of the letter DOM elements that have a CSS class name that matches
 the selected letter and replace each selected element's hide CSS class with the show CSS class.
+**/
