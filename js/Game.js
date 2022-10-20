@@ -1,5 +1,4 @@
 /**
-  * Game class methods for starting and ending the game, handling interactions, getting a random phrase, checking for a win, and removing a life from the scoreboard.
   * @missed - used to track the number of missed guesses by the player, begins with 0 ata start of game.
   * @phrase - an array of five Phrase objects to use with the game.
   * @activePhrase - is the Phrase object that’s currently in play. initial value is null.
