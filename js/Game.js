@@ -21,8 +21,8 @@ class Game {
       * Selects random phrase from phrases property.
     **/
     getRandomPhrase() {
-      const randomPhrase = Math.floor(Math.random() * this.phrases.length);
-      return this.phrases[randomPhrase];
+        const randomPhrase = Math.floor(Math.random() * this.phrases.length);
+        return this.phrases[randomPhrase];
     };
 
     /**
@@ -31,7 +31,10 @@ class Game {
       * Sets the activePhrase property with the chosen phrase and calls the addPhraseToDisplay() method.
     **/
     startGame() {
-
+        const div = document.getElementById('overlay');
+        div.style.display = 'none';
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();          
     }
 
 }

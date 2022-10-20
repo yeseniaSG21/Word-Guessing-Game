@@ -1,6 +1,18 @@
-const game = new Game();
-game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+
+let game;
+
+let buttonElement = document.getElementById('btn__reset');
+
+buttonElement.addEventListener('click', event => {
+    if (game) {
+      game.resetGame();
+    } else {
+      game = new Game();
+    }
+    game.startGame();
+});
+
+
 
 /**
 Create a new instance of the Game class and add event listeners for the start button and onscreen keyboard buttons:
