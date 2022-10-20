@@ -67,12 +67,14 @@ class Game {
     removeLife() {
       const playerTries = document.getElementsByClassName('tries');
 
-      if ( this.missed < 4 ) {
+      for ( let i = 0; i < playerTries.length; i++ ) {
+          if ( this.missed < 4 ) {
 
-        this.missed += 1;
-      }
-      if ( this.missed === 5 ) {
-        this.gameOver();
+            this.missed += 1;
+          }
+          if ( this.missed === 5 ) {
+            this.gameOver();
+          }
       }
     };
 
