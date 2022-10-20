@@ -34,17 +34,22 @@ class Game {
         const div = document.getElementById('overlay');
         div.style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
-        this.activePhrase.addPhraseToDisplay();          
+        this.activePhrase.addPhraseToDisplay();
     }
 
+    /**
+      *** Check to see if the button clicked matches a letter in the phrase, and then directs the game based on a correct or incorrect guess.
+      *** Disable the selected letter’s onscreen keyboard button.
+      *** If wrong letter selected, 'wrong' CSS class will be added to selected letter on keyboard; removeLife() method called.
+      *** If guessed letter is included, 'right' CSS class will be added to that letter on keyboard; showMatchedLetter() method called and checkForWin()
+      *** Call checkForWin() method
+    **/
+    handleInteraction() {
+
+    }
 }
 /**
-    handleInteraction(): this method controls most of the game logic.
-    It checks to see if the button clicked by the player matches a letter in the phrase, and then directs
-    the game based on a correct or incorrect guess. This method should:
-        Disable the selected letter’s onscreen keyboard button.
-        If the phrase does not include the guessed letter, add the wrong CSS class to the selected letter's keyboard button and call the removeLife() method.
-        If the phrase includes the guessed letter, add the chosen CSS class to the selected letter's keyboard button, call the showMatchedLetter() method on the phrase, and then call the checkForWin() method. If the player has won the game, also call the gameOver() method.
+ and then call the checkForWin() method. If the player has won the game, also call the gameOver() method.
 
 
 removeLife(): this method removes a life from the scoreboard, by replacing one of the liveHeart.png images with a
