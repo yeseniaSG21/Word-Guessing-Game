@@ -1,11 +1,12 @@
 
 let game;
 let buttonElement = document.getElementById('btn__reset');
+let keyboardElement = document.getElementById('qwerty');
 
-/**
-  * An event listener for the "Start Game" button which creates a new Game object and starts the game by
-    calling the startGame() method.
-**/
+/*****
+  * An event listener for the "Start Game" button which creates a new Game object.
+  * Starts the game by calling the startGame() method.
+*****/
 buttonElement.addEventListener('click', event => {
     if (game) {
       game.resetGame();
@@ -15,10 +16,12 @@ buttonElement.addEventListener('click', event => {
     game.startGame();
 });
 
-
-/**
-  Add click event listeners to each of the onscreen keyboard buttons, so that clicking a button calls the
-    handleInteraction() method on the Game object. Event delegation can also be used in order to avoid having to add
-    an event listener to each individual keyboard button. Clicking the space between and around the onscreen keyboard
-    buttons should not result in the handleInteraction() method being called.
-**/
+/*****
+  * An event istener for each of the onscreen keyboard buttons.
+  * Clicking a button calls the handleInteraction() method on the Game object.
+*****/
+keyboardElement.addEventListener('click', event => {
+    if (event.target.className === 'key') {
+      console.log('click');
+    }
+});
