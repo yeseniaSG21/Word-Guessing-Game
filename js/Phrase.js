@@ -46,12 +46,12 @@ class Phrase {
     */
     showMatchedLetter(letter) {
         const match = document.querySelector('.letter');
+
+        for ( let i = 0; i < match.length; i++ ) {
+         if ( match[i].classList.includes(letter) ) {
+           match[i].classList.remove('hide');
+           match[i].classList.add('show');
+         }
+        }
     };
 }
-
-
-/**
-showMatchedLetter(): reveals the letter(s) on the board that matches the player's selection.
-To reveal the matching letter(s), select all of the letter DOM elements that have a CSS class name that matches
-the selected letter and replace each selected element's hide CSS class with the show CSS class.
-**/
