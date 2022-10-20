@@ -19,6 +19,7 @@ buttonElement.addEventListener('click', event => {
 /*****
   * An event istener for each of the onscreen keyboard buttons.
   * Clicking a button calls the handleInteraction() method on the Game object.
+  * Reference: https://dmitripavlutin.com/javascript-event-delegation/
 *****/
 keyboardElement.addEventListener('click', event => {
     if (event.target.className === 'key') {
