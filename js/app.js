@@ -22,6 +22,7 @@ buttonElement.addEventListener('click', event => {
 *****/
 keyboardElement.addEventListener('click', event => {
     if (event.target.className === 'key') {
+      game.handleInteraction(event.target);
       console.log('click');
     }
 });
