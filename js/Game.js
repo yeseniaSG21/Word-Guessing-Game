@@ -41,17 +41,15 @@ class Game {
       *** Check to see if the button clicked matches a letter in the phrase, and then directs the game based on a correct or incorrect guess.
       *** Disable the selected letter’s onscreen keyboard button.
       *** If wrong letter selected, 'wrong' CSS class will be added to selected letter on keyboard; removeLife() method called.
-      *** If guessed letter is included, 'right' CSS class will be added to that letter on keyboard; showMatchedLetter() method called and checkForWin()
-      *** Call checkForWin() method
+      *** If guessed letter is included, 'right' CSS class will be added to that letter on keyboard; showMatchedLetter() method called and checkForWin().
+      *** If the player has won the game, also call the gameOver() method.
     **/
     handleInteraction() {
-
+          
     }
 }
+
 /**
- and then call the checkForWin() method. If the player has won the game, also call the gameOver() method.
-
-
 removeLife(): this method removes a life from the scoreboard, by replacing one of the liveHeart.png images with a
 lostHeart.png image (found in the images folder) and increments the missed property.
 If the player has five missed guesses (i.e they're out of lives), then end the game by calling the gameOver() method.
