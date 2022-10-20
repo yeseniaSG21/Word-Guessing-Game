@@ -27,7 +27,9 @@ class Game {
     };
 
     /**
-      * Begins game by selecting a random phrase and displaying it to user
+      * Begins game by selecting a random phrase and displaying it to user.
+      * Hides the start screen overlay and calles the getRandomPhrase() method.
+      * Sets the activePhrase property with the chosen phrase and calls the addPhraseToDisplay() method.
     **/
     startGame() {
 
@@ -35,10 +37,6 @@ class Game {
 
 }
 /**
-    startGame(): hides the start screen overlay, calls the getRandomPhrase() method,
-    and sets the activePhrase property with the chosen phrase.
-    It also adds that phrase to the board by calling the addPhraseToDisplay() method on the activePhrase property.
-
     handleInteraction(): this method controls most of the game logic.
     It checks to see if the button clicked by the player matches a letter in the phrase, and then directs
     the game based on a correct or incorrect guess. This method should:
