@@ -1,5 +1,6 @@
 const game = new Game();
-game.getRandomPhrase().addPhraseToDisplay();
+game.startGame();
+console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
 /**
 Create a new instance of the Game class and add event listeners for the start button and onscreen keyboard buttons:
