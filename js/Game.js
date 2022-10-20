@@ -50,7 +50,13 @@ class Game {
       * @return {boolean} True if game has been won, false if game wasn't won
     **/
     checkForWin() {
+        const hideLetter = document.querySelector('.hide');
 
+        if (hideLetter.length === 0) {
+          return true;
+        } else {
+          return false;
+        }
     };
 
     /**
@@ -59,14 +65,22 @@ class Game {
       * Checks if player has remaining lives and ends game if player is out.
     **/
     removeLife() {
+      const playerTries = document.getElementsByClassName('tries');
 
+      if ( this.missed < 4 ) {
+          
+        this.missed += 1;
+      }
+      if ( this.missed === 5 ) {
+        this.gameOver();
+      }
     };
 
     /**
-      * Displays game over message
+      * Displays "game over" message
       * @param {boolean} gameWon - Whether or not the user won the game
     **/
     gameOver(gameWon) {
 
-    };    
+    };
 }
