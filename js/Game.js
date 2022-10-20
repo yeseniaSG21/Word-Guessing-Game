@@ -1,3 +1,10 @@
+/**
+  * Game class methods for starting and ending the game, handling interactions, getting a random phrase, checking for a win, and removing a life from the scoreboard.
+  * @missed - used to track the number of missed guesses by the player, begins with 0 ata start of game.
+  * @phrase - an array of five Phrase objects to use with the game.
+  * @activePhrase - is the Phrase object that’s currently in play. initial value is null.
+**/
+
 class Game {
     constructor() {
       this.missed = 0;
@@ -13,33 +20,21 @@ class Game {
 
     /**
       * Selects random phrase from phrases property.
-      * @return {Object} Phrase object chosen to be used.
     **/
     getRandomPhrase() {
       const randomPhrase = Math.floor(Math.random() * this.phrases.length);
       return this.phrases[randomPhrase];
     };
 
+    /**
+      * Begins game by selecting a random phrase and displaying it to user
+    **/
+    startGame() {
+
+    }
 
 }
-
-
-
 /**
-The class should include a constructor that initializes the following properties:
-
-    missed: used to track the number of missed guesses by the player.
-    The initial value is 0, since no guesses have been made at the start of the game.
-
-    phrases: an array of five Phrase objects to use with the game.
-    A phrase should only include letters and spaces— no numbers, punctuation or other special characters.
-
-    activePhrase: This is the Phrase object that’s currently in play.
-    The initial value is null. Within the startGame() method, this property will be set to the Phrase object returned
-    from a call to the getRandomPhrase() method.
-
-The class should also have these methods:
-
     startGame(): hides the start screen overlay, calls the getRandomPhrase() method,
     and sets the activePhrase property with the chosen phrase.
     It also adds that phrase to the board by calling the addPhraseToDisplay() method on the activePhrase property.
