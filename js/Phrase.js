@@ -9,11 +9,22 @@ class Phrase {
       * When the player correctly guesses a letter, the empty box is replaced with the matched letter.
     **/
     addPhraseToDisplay() {
-        const ul = document.getElementById('phrase');
+        const phraseletters = this.phrase.split('');
 
-        for ( let i = 0; i < this.phrase.length; i++ ) {
-          let placeholder = document.createElement('li');
-        }
+        phraseletters.forEach( character => {
+            const ul = document.querySelector('ul');
+            const li =  document.createElement('li');
+            li.textContent = character;
+
+            if (character !== " ") {
+              li.classList.add('letter');
+              li.classList.add('hide');
+              li.classList.add(character);
+            } else {
+              li.classList.add('space');
+            }
+            ul.appendChild(li);
+        });
     };
 }
 
