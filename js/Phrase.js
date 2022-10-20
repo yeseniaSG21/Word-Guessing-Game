@@ -1,3 +1,7 @@
+/**
+  * @phrase - actual phrase the Phrase object is representing, converted to all lower case.
+**/
+
 class Phrase {
     constructor(phrase) {
       this.phrase = phrase.toLowerCase();
