@@ -53,5 +53,6 @@ class Phrase {
            match[i].classList.add('show');
          }
         }
+        return match;
     };
 }

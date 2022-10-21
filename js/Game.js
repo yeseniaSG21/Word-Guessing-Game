@@ -42,8 +42,19 @@ class Game {
   * @param (HTMLButtonElement) button - The clicked button element
 *****/
     handleInteraction(button) {
+        button.disabled = true;
 
-    }
+        if ( this.activePhrase.checkLetter(button.textContent) ) {
+          button.className = 'chosen';
+          this.activePhrase.showMatchedLetter(button.textContent);
+          if ( this.checkForWin() === true ) {
+            this.gameOver();
+          }
+        } else {
+          button.className = 'wrong';
+          this.removeLife();
+        }
+    };
 
 /*****
   * Checks to see if the player has revealed all of the letters in the active phrase.
@@ -88,9 +99,9 @@ class Game {
         const gameMessage = document.getElementById('game-over-message');
         startScreen.style.display = 'flex';
 
-        if (gameWon) {
+        if ( gameWon === true ) {
           startScreen.className = 'win';
-          gameMessage.innerHTML = `You guessed correctly! <strong/>YOU WON!<strong/>`;
+          gameMessage.innerHTML = `You guessed correctly! <strong/>YOU WIN!<strong/>`;
         } else {
           startScreen.className = 'lose';
           gameMessage.innerHTML = `No more lives! Sorry, you lost!`;
@@ -109,7 +120,7 @@ class Game {
         const btn_keys = document.querySelectorAll('.key');
         for( let i = 0; i < btn_keys.length; i++) {
           btn_keys[i].classList.remove('wrong');
-          btn_keys[i].classList.remove('selected');
+          btn_keys[i].classList.remove('chosen');
           btn_keys[i].classList.remove('show');
           btn_keys[i].classList.add('key');
           btn_keys[i].disabled = false;
