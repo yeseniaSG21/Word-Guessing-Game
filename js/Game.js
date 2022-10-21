@@ -93,7 +93,7 @@ class Game {
           gameMessage.innerHTML = `You guessed correctly! <strong/>YOU WON!<strong/>`;
         } else {
           startScreen.className = 'lose';
-          gameMessage.innerHTML = `No more lives! Sorry, you lose!`;
+          gameMessage.innerHTML = `No more lives! Sorry, you lost!`;
         }
     };
 }
