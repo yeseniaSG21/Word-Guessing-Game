@@ -78,11 +78,13 @@ class Game {
 *****/
     removeLife() {
       this.missed++;
-      const playerTries = document.getElementsByClassName('tries');
+      const playerTries = document.querySelectorAll('.tries');
 
       for ( let i = 0; i < playerTries.length; i++ ) {
-           const heart = playerTries[i].firstChild;
-
+          const heart = playerTries[i].firstChild;
+          if ( heart.src.includes('images/liveHeart.png') ) {
+            return heart.src = 'images/lostHeart.png';
+          }
 
           if ( this.missed === 5 ) {
             this.gameOver();
