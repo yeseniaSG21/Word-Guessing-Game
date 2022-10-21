@@ -102,7 +102,7 @@ class Game {
 
         if (gameWon) {
           startScreen.className = 'win';
-          gameMessage.innerHTML = `You guessed correctly! <strong/>YOU WIN!<strong/>`;
+          gameMessage.innerHTML = `You guessed correctly! Would you like to play again?`;
         } else {
           startScreen.className = 'lose';
           gameMessage.innerHTML = `No more lives! Sorry, you lost!`;
@@ -119,10 +119,11 @@ class Game {
         ul.innerHTML = '';
         this.missed = 0;
 
-        const btn_keys = document.querySelectorAll('.key');
+        const btn_keys = document.querySelectorAll('button');
         btn_keys.forEach( key => {
             key.classList.remove('wrong');
             key.classList.remove('chosen');
+            key.classList.add('key');
             key.disabled = false;
         });
 
