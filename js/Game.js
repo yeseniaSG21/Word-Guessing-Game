@@ -96,4 +96,16 @@ class Game {
           gameMessage.innerHTML = `No more lives! Sorry, you lost!`;
         }
     };
+
+/*****
+  * After a game is completed, gameboard will reset by clicking the "Start Game" button and load a new game.
+  * Enable all of the onscreen keyboard buttons and update each CSS style as it is chosen.
+  * Reset all player's lives in the scoreboard at the bottom of the gameboard to display the `liveHeart.png` image.
+*****/
+    resetGame() {
+      
+    }
+
+
+
 }
