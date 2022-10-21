@@ -31,8 +31,8 @@ class Game {
   * Sets the activePhrase property with the chosen phrase and calls the addPhraseToDisplay() method.
 *****/
     startGame() {
-        const div = document.getElementById('overlay');
-        div.style.display = 'none';
+        const startScreen = document.getElementById('overlay');
+        startScreen.style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
@@ -50,9 +50,10 @@ class Game {
   * @return {boolean} True if game has been won, false if game wasn't won
 *****/
     checkForWin() {
-        const hideLetter = document.querySelector('.hide');
+        const hiddenLetter = document.querySelector('.hide');
+        const revealLetter = document.querySelectorAll('.show');
 
-        if (hideLetter.length === 0) {
+        if (hiddenLetter.length === revealLetter.length) {
           return true;
         } else {
           return false;
@@ -68,10 +69,10 @@ class Game {
       const playerTries = document.getElementsByClassName('tries');
 
       for ( let i = 0; i < playerTries.length; i++ ) {
-          if ( this.missed < 4 ) {
+           const heart = playerTries[i].firstChild;
 
-            this.missed += 1;
-          }
+            this.missed++;
+
           if ( this.missed === 5 ) {
             this.gameOver();
           }
@@ -83,6 +84,16 @@ class Game {
   * @param {boolean} gameWon - Whether or not the user won the game
 *****/
     gameOver(gameWon) {
+        const startScreen = document.getElementById('overlay');
+        const gameMessage = document.getElementById('game-over-message');
+        startScreen.style.display = 'flex';
 
+        if (gameWon) {
+          startScreen.className = 'win';
+          gameMessage.innerHTML = `You guessed correctly! <strong/>YOU WON!<strong/>`;
+        } else {
+          startScreen.className = 'lose';
+          gameMessage.innerHTML = `No more lives! Sorry, you lose!`;
+        }
     };
 }
