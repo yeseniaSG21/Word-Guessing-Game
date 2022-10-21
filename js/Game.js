@@ -103,9 +103,24 @@ class Game {
   * Reset all player's lives in the scoreboard at the bottom of the gameboard to display the `liveHeart.png` image.
 *****/
     resetGame() {
-      
+        const ul = document.querySelector('ul');
+        ul.innerHTML = '';
+
+        const btn_keys = document.querySelectorAll('.key');
+        for( let i = 0; i < btn_keys.length; i++) {
+          btn_keys[i].classList.remove('wrong');
+          btn_keys[i].classList.remove('selected');
+          btn_keys[i].classList.remove('show');
+          btn_keys[i].classList.add('key');
+          btn_keys[i].disabled = false;
+        }
+
+        const playerTries = document.getElementsByClassName('tries');
+        for ( let i = 0; i < playerTries.length; i++ ) {
+          const heartReset = playerTries[i].firstChild;
+          heartReset.src = 'images/liveHeart.png';
+        }
+
+        this.startGame();
     }
-
-
-
 }
