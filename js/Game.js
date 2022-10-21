@@ -8,8 +8,8 @@ class Game {
     constructor() {
       this.missed = 0;
       this.phrases = [
+          new Phrase('Carpe Diem'),
           new Phrase('Dream big and dare to fail'),
-          new Phrase('Believe in yourself and you will be unstoppable'),
           new Phrase('Make each day your masterpiece'),
           new Phrase('It is never too late to be what you might have been'),
           new Phrase('I am stress because I am blessed'),
@@ -41,17 +41,17 @@ class Game {
   * Handles onscreen keyboard button clicks
   * @param (HTMLButtonElement) button - The clicked button element
 *****/
-    handleInteraction(button) {
-        button.disabled = true;
+    handleInteraction(buttonElement) {
+        buttonElement.disabled = true;
 
-        if ( this.activePhrase.checkLetter(button.textContent) ) {
-          button.className = 'chosen';
-          this.activePhrase.showMatchedLetter(button.textContent);
+        if ( this.activePhrase.checkLetter(buttonElement.textContent) ) {
+          buttonElement.className = 'chosen';
+          this.activePhrase.showMatchedLetter(buttonElement.textContent);
           if ( this.checkForWin() ) {
             this.gameOver(true);
           }
         } else {
-          button.className = 'wrong';
+          buttonElement.className = 'wrong';
           this.removeLife();
         }
     };
@@ -119,20 +119,16 @@ class Game {
         this.missed = 0;
 
         const btn_keys = document.querySelectorAll('.key');
-        for( let i = 0; i < btn_keys.length; i++) {
-          btn_keys[i].classList.remove('wrong');
-          btn_keys[i].classList.remove('chosen');
-          btn_keys[i].classList.remove('show');
-          btn_keys[i].classList.add('key');
-          btn_keys[i].disabled = false;
-        }
+        btn_keys.forEach( key => {
+            key.classList.remove('wrong');
+            key.classList.remove('chosen');
+            key.disabled = false;
+        });
 
         const playerTries = document.getElementsByClassName('tries');
         for ( let i = 0; i < playerTries.length; i++ ) {
           const heartReset = playerTries[i].firstChild;
           heartReset.src = 'images/liveHeart.png';
         }
-
-        this.startGame();
     }
 }
