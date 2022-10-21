@@ -47,8 +47,8 @@ class Game {
         if ( this.activePhrase.checkLetter(button.textContent) ) {
           button.className = 'chosen';
           this.activePhrase.showMatchedLetter(button.textContent);
-          if ( this.checkForWin() === true ) {
-            this.gameOver();
+          if ( this.checkForWin() ) {
+            this.gameOver(true);
           }
         } else {
           button.className = 'wrong';
@@ -61,13 +61,13 @@ class Game {
   * @return {boolean} True if game has been won, false if game wasn't won
 *****/
     checkForWin() {
-        const hiddenLetter = document.querySelector('.hide');
+        const hiddenLetter = document.querySelectorAll('.hide');
         const revealLetter = document.querySelectorAll('.show');
 
         if (hiddenLetter.length === revealLetter.length) {
-          return true;
+            return true;
         } else {
-          return false;
+            return false;
         }
     };
 
@@ -77,12 +77,12 @@ class Game {
   * Checks if player has remaining lives and ends game if player is out.
 *****/
     removeLife() {
+      this.missed++;
       const playerTries = document.getElementsByClassName('tries');
 
       for ( let i = 0; i < playerTries.length; i++ ) {
            const heart = playerTries[i].firstChild;
 
-            this.missed++;
 
           if ( this.missed === 5 ) {
             this.gameOver();
@@ -99,7 +99,7 @@ class Game {
         const gameMessage = document.getElementById('game-over-message');
         startScreen.style.display = 'flex';
 
-        if ( gameWon === true ) {
+        if (gameWon) {
           startScreen.className = 'win';
           gameMessage.innerHTML = `You guessed correctly! <strong/>YOU WIN!<strong/>`;
         } else {
@@ -116,6 +116,7 @@ class Game {
     resetGame() {
         const ul = document.querySelector('ul');
         ul.innerHTML = '';
+        this.missed = 0;
 
         const btn_keys = document.querySelectorAll('.key');
         for( let i = 0; i < btn_keys.length; i++) {
