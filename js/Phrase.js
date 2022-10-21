@@ -45,14 +45,13 @@ class Phrase {
   * @param (string) letter - Letter to display
 *****/
     showMatchedLetter(letter) {
-        const match = document.querySelector('.letter');
+        const match = document.querySelectorAll('.letter');
 
         for ( let i = 0; i < match.length; i++ ) {
-         if ( match[i].classList.includes(letter) ) {
-           match[i].classList.remove('hide');
-           match[i].classList.add('show');
-         }
+           if ( match[i].classList.includes(letter) ) {
+             match[i].classList.remove('hide');
+             match[i].classList.add('show');
+           }
         }
-        return match;
     };
 }
