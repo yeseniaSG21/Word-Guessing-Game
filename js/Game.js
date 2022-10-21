@@ -62,12 +62,11 @@ class Game {
 *****/
     checkForWin() {
         const hiddenLetter = document.querySelectorAll('.hide');
-        const revealLetter = document.querySelectorAll('.show');
 
-        if (hiddenLetter.length === revealLetter.length) {
-            return true;
-        } else {
+        if (hiddenLetter.length > 0) {
             return false;
+        } else {
+            return true;
         }
     };
 
