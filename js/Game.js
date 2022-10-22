@@ -12,7 +12,7 @@ class Game {
           new Phrase('Dream big and dare to fail'),
           new Phrase('Make each day your masterpiece'),
           new Phrase('It is never too late to be what you might have been'),
-          new Phrase('I am stress because I am blessed'),
+          new Phrase('I am stressed because I am blessed'),
       ];
       this.activePhrase = null;
     }
