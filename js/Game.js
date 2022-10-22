@@ -39,6 +39,7 @@ class Game {
 
 /*****
   * Handles onscreen keyboard button clicks
+  * Added a timeout to allow player to view phrase before the game resets
   * @param (HTMLButtonElement) button - The clicked button element
 *****/
     handleInteraction(buttonElement) {
@@ -48,6 +49,9 @@ class Game {
           buttonElement.className = 'chosen';
           this.activePhrase.showMatchedLetter(buttonElement.textContent);
           if ( this.checkForWin() ) {
+            const winningPhrase = document.getElementById('phrase');
+
+            winningPhrase.className = 'winning_letter';
             setTimeout(() => {this.gameOver(true)}, 2000);
           }
         } else {
@@ -116,8 +120,10 @@ class Game {
 *****/
     resetGame() {
         const ul = document.querySelector('ul');
+        const winningPhrase = document.getElementById('phrase');
         ul.innerHTML = '';
         this.missed = 0;
+        winningPhrase.classList.remove('winning_letter');
 
         const btn_keys = document.querySelectorAll('button');
         btn_keys.forEach( key => {
