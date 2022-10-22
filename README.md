@@ -2,6 +2,8 @@
 
 Using JavaScript's OOP (Object-Oriented Programming), and DOM Manipulation to create a random, hidden phrase game, the player tries to guess by clicking letters on an onscreen keyboard. From a list of 5 pre-chosen phrases, the player will be given a new random phrase each time they play.
 
+Added a color background around the phrase when the phrase is guessed correctly before resetting the game to give players a chance to read the phrase.
+
 
 ### Guidelines for the Game:
 
@@ -18,3 +20,5 @@ Using JavaScript's OOP (Object-Oriented Programming), and DOM Manipulation to cr
 6. A player continues to select letters until they guess the phrase (and win), or make five incorrect guesses (and lose). If the player completes the phrase before they run out of guesses, a winning screen appears. If the player guesses incorrectly five times, a losing screen appears.
 
 7. After the game is over, player may click "Start Game" button to play a new game.
+
+Play a Game: file:///Users/ysosagonzal/Documents/TechDegree%20Code/Project%204/Word-Guessing-Game/index.html
