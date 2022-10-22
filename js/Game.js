@@ -48,7 +48,7 @@ class Game {
           buttonElement.className = 'chosen';
           this.activePhrase.showMatchedLetter(buttonElement.textContent);
           if ( this.checkForWin() ) {
-            this.gameOver(true);
+            setTimeout(() => {this.gameOver(true)}, 2000);
           }
         } else {
           buttonElement.className = 'wrong';
