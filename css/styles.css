@@ -107,7 +107,10 @@ button {
   width: 15px;
 }
 
-
+.winning_letter {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  color: transparent;
+}
 
 .show {
   color: #fff;
